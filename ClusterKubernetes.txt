@@ -1,0 +1,12 @@
+
+kops create cluster --name=kubevpro.mydevopslearning94.online \
+--state=s3://vprofile-kops-devops --zones=us-east-2a,us-east-2b \
+--node-count=2 --node-size=t3.small --master-size=t3.medium \
+--dns-zone=kubevpro.mydevopslearning94.online \
+--node-volume-size=8 --master-volume-size=8
+
+kops update cluster --name kubevpro.mydevopslearning94.online --state=s3://vprofile-kops-devops --yes --admin
+
+kops delete cluster --name kubevpro.mydevopslearning94.online --state=s3://vprofile-kops-devops --yes
+
+
